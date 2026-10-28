@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-28T15:40:59+09:00",
+  "checked_at": "2026-10-28T17:14:53+09:00",
   "check_date": "2026-10-28",
   "scope": "7 tested official bulletin endpoints; NOT all 37 sources; not amendment confirmation",
   "total_sources": 7,
@@ -8,45 +8,45 @@
   "source_status": {
     "gseed_notice": {
       "name": "G-SEED 공지",
-      "status": "baseline_created",
+      "status": "success",
       "coverage": "full_listing",
       "rows": 90,
-      "last_success": "2026-10-28T15:40:59+09:00"
+      "last_success": "2026-10-28T17:14:53+09:00"
     },
     "gseed_files": {
       "name": "G-SEED 공개자료",
-      "status": "baseline_created",
+      "status": "success",
       "coverage": "full_listing",
       "rows": 38,
-      "last_success": "2026-10-28T15:40:59+09:00"
+      "last_success": "2026-10-28T17:14:53+09:00"
     },
     "eims_notice": {
       "name": "서울 환경영향평가 공지",
-      "status": "baseline_created",
+      "status": "success",
       "coverage": "full_listing",
       "rows": 22,
-      "last_success": "2026-10-28T15:40:59+09:00"
+      "last_success": "2026-10-28T17:14:53+09:00"
     },
     "eims_announce": {
       "name": "서울 환경영향평가 공고·공람",
-      "status": "baseline_created",
+      "status": "success",
       "coverage": "full_listing",
       "rows": 298,
-      "last_success": "2026-10-28T15:40:59+09:00"
+      "last_success": "2026-10-28T17:14:53+09:00"
     },
     "eims_library": {
       "name": "서울 환경영향평가 자료실",
-      "status": "baseline_created",
+      "status": "success",
       "coverage": "full_listing",
       "rows": 41,
-      "last_success": "2026-10-28T15:40:59+09:00"
+      "last_success": "2026-10-28T17:14:53+09:00"
     },
     "mcee_notice": {
       "name": "기후에너지환경부 공지",
-      "status": "baseline_created",
+      "status": "success",
       "coverage": "recent_rss_only",
       "rows": 10,
-      "last_success": "2026-10-28T15:40:59+09:00"
+      "last_success": "2026-10-28T17:14:53+09:00"
     },
     "mcee_rules": {
       "name": "기후에너지환경부 고시·행정규칙",
@@ -56,7 +56,7 @@
       "rows": 0
     }
   },
-  "baseline_only": true,
+  "baseline_only": false,
   "changes": [],
   "recent_observed": [
     {
@@ -205,7 +205,7 @@
       "source": "G-SEED 공지",
       "title": "「2026 대한민국 녹색건축대전」 수상작 발표",
       "date": "2026-10-21",
-      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=90&bbsCnt=8&bbsId=2668&pageNum=1",
+      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=90&bbsCnt=7&bbsId=2668&pageNum=1",
       "content_hash": "dc6003d055a9bbd7724c025bdcecaddbf60810b27c2bc0f00a90d89205c70f8c",
       "link_note": "공식 원문 후보"
     },
@@ -245,7 +245,7 @@
       "source": "G-SEED 공지",
       "title": "2026년 녹색건축인증전문가(G-SEED ID) (신규)교육 안내",
       "date": "2026-10-01",
-      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=87&bbsCnt=19&bbsId=2659&pageNum=1",
+      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=87&bbsCnt=20&bbsId=2659&pageNum=1",
       "content_hash": "c7f58c7c0bc2571dd03159bcbe562b9f7a6daedde63391b5f405659cd33ca541",
       "link_note": "공식 원문 후보"
     },
@@ -255,7 +255,7 @@
       "source": "G-SEED 공지",
       "title": "2026년 3, 4차 녹색건축인증(G-SEED) 기본교육 안내",
       "date": "2026-10-01",
-      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=88&bbsCnt=24&bbsId=2660&pageNum=1",
+      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=88&bbsCnt=27&bbsId=2660&pageNum=1",
       "content_hash": "73f80871faddc08e6dab3fc7e6158725028f0836773bedf9b00da771dbded922",
       "link_note": "공식 원문 후보"
     },
