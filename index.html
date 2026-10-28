@@ -123,5 +123,6 @@ $('all-posts-button').onclick=()=>tab('feed');$('source-status-button').onclick=
 $('prev-page').onclick=()=>{page--;renderRows();};$('next-page').onclick=()=>{page++;renderRows()};document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>tab(b.dataset.tab));$('modal-close').onclick=closeDetail;$('modal').onclick=e=>{if(e.target===$('modal'))closeDetail()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail()});
 })();
 </script>
+<script src="./assets/portal.js" defer></script>
 </body>
 </html>
