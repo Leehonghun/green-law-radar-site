@@ -1,0 +1,151 @@
+name: Upgrade Work Portal Sidebar - Collapsible Legal Radar
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/radar-sidebar.yml'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: green-law-radar-sidebar-upgrade
+  cancel-in-progress: false
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Add collapsible first-level legal radar navigation
+        shell: bash
+        run: |
+          mkdir -p assets
+          cat > assets/radar_sidebar.js <<'RADAR_SIDEBAR_JS'
+          /* Work portal - collapsible level-one legal radar menu. Public UI only. */
+          (() => {
+            'use strict';
+            const aside = document.querySelector('.aside');
+            const nav = aside?.querySelector('.nav');
+            const oldHeading = aside?.querySelector(':scope > .nav-caption');
+            if (!aside || !nav || !oldHeading || document.getElementById('radar-sidebar-toggle')) return;
+
+            const items = [...nav.children].filter(el => el.matches('button[data-tab]'));
+            if (!items.length) return;
+
+            const submenu = document.createElement('div');
+            submenu.id = 'radar-sidebar-submenu';
+            submenu.className = 'radar-sidebar-submenu';
+            nav.insertBefore(submenu, items[0]);
+            items.forEach(el => submenu.appendChild(el));
+
+            const toggle = document.createElement('button');
+            toggle.type = 'button';
+            toggle.id = 'radar-sidebar-toggle';
+            toggle.className = 'radar-sidebar-toggle';
+            toggle.setAttribute('aria-controls', submenu.id);
+            const label = document.createElement('span');
+            label.textContent = '1. 법규 레이더';
+            const chevron = document.createElement('span');
+            chevron.className = 'radar-sidebar-chevron';
+            chevron.setAttribute('aria-hidden', 'true');
+            chevron.textContent = '⌄';
+            toggle.append(label, chevron);
+            oldHeading.replaceWith(toggle);
+
+            const setOpen = open => {
+              submenu.hidden = !open;
+              toggle.setAttribute('aria-expanded', String(open));
+              chevron.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+            };
+            setOpen(false);
+            toggle.addEventListener('click', () => setOpen(submenu.hidden));
+            nav.querySelectorAll('button[data-portal-module]').forEach(b =>
+              b.addEventListener('click', () => setOpen(false)));
+
+            const style = document.createElement('style');
+            style.id = 'radar-sidebar-menu-styles';
+            style.textContent = `
+              .aside .radar-sidebar-toggle {
+                width:calc(100% - 18px); margin:0 9px 10px; padding:14px 12px;
+                display:flex;align-items:center;justify-content:space-between;gap:10px;
+                border:1px solid #476885;border-radius:10px;background:#294a65;
+                color:#fff;text-align:left;font-size:16px;font-weight:800;cursor:pointer;
+                font-family:inherit;
+              }
+              .aside .radar-sidebar-toggle:hover {background:#365c7c}
+              .aside .radar-sidebar-toggle:focus-visible {outline:3px solid #9cc2ff;outline-offset:2px}
+              .aside .radar-sidebar-chevron {font-size:22px;line-height:1;transition:transform .18s ease}
+              .aside .radar-sidebar-submenu {display:flex;flex-direction:column;gap:5px;margin:0 0 12px}
+              .aside .radar-sidebar-submenu[hidden] {display:none !important}
+              .aside .radar-sidebar-submenu>button {margin-left:12px;padding-left:15px;font-size:13px;width:calc(100% - 12px)}
+              .aside .nav>button[data-portal-module] {font-size:15px;font-weight:760}
+              @media(max-width:780px){.aside .radar-sidebar-toggle{font-size:15px}}
+            `;
+            document.head.appendChild(style);
+          })();
+          RADAR_SIDEBAR_JS
+          node --check assets/radar_sidebar.js
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          html=p.read_text(encoding='utf-8')
+          assert 'class="aside"' in html and 'id="latest-post-list"' in html, 'Existing work portal not found'
+          assert './assets/portal.js' in html, 'Portal module missing: refusing unsafe change'
+          marker='<script src="./assets/radar_sidebar.js" defer></script>'
+          if marker not in html:
+              assert '</body>' in html
+              html=html.replace('</body>',marker+'\n</body>',1)
+              p.write_text(html,encoding='utf-8')
+          assert html.count(marker)==1
+          print('Installed accessible collapsible Legal Radar navigation')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html assets/radar_sidebar.js
+          if ! git diff --cached --quiet; then
+            git commit -m "feat: add collapsible level-one legal radar navigation [skip ci]"
+            git push origin HEAD:main
+          fi
+      - name: Build public site without altering collected data
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from shutil import copytree
+          out=Path('_site')
+          out.mkdir(exist_ok=True)
+          html=Path('index.html').read_text(encoding='utf-8')
+          assert './assets/radar_sidebar.js' in html
+          daily='<script src="./assets/daily_widget.js" defer></script>'
+          if daily not in html:
+              html=html.replace('</body>',daily+'\n</body>',1)
+          (out/'index.html').write_text(html,encoding='utf-8')
+          copytree('assets',out/'assets',dirs_exist_ok=True)
+          copytree('data',out/'data',dirs_exist_ok=True)
+          (out/'.nojekyll').write_text('',encoding='utf-8')
+          assert (out/'data'/'daily_radar.json').exists(),'Cannot discard official monitoring report'
+          assert (out/'data'/'radar_state.json').exists(),'Cannot discard previous monitoring state'
+          print('Website built with original radar data retained')
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: update-site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: publish
