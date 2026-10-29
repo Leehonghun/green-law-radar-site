@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-28T17:14:53+09:00",
-  "check_date": "2026-10-28",
+  "checked_at": "2026-10-29T17:41:00+09:00",
+  "check_date": "2026-10-29",
   "scope": "7 tested official bulletin endpoints; NOT all 37 sources; not amendment confirmation",
   "total_sources": 7,
   "success_sources": 6,
@@ -11,42 +11,42 @@
       "status": "success",
       "coverage": "full_listing",
       "rows": 90,
-      "last_success": "2026-10-28T17:14:53+09:00"
+      "last_success": "2026-10-29T17:41:00+09:00"
     },
     "gseed_files": {
       "name": "G-SEED 공개자료",
       "status": "success",
       "coverage": "full_listing",
       "rows": 38,
-      "last_success": "2026-10-28T17:14:53+09:00"
+      "last_success": "2026-10-29T17:41:00+09:00"
     },
     "eims_notice": {
       "name": "서울 환경영향평가 공지",
       "status": "success",
       "coverage": "full_listing",
       "rows": 22,
-      "last_success": "2026-10-28T17:14:53+09:00"
+      "last_success": "2026-10-29T17:41:00+09:00"
     },
     "eims_announce": {
       "name": "서울 환경영향평가 공고·공람",
       "status": "success",
       "coverage": "full_listing",
-      "rows": 298,
-      "last_success": "2026-10-28T17:14:53+09:00"
+      "rows": 299,
+      "last_success": "2026-10-29T17:41:00+09:00"
     },
     "eims_library": {
       "name": "서울 환경영향평가 자료실",
       "status": "success",
       "coverage": "full_listing",
       "rows": 41,
-      "last_success": "2026-10-28T17:14:53+09:00"
+      "last_success": "2026-10-29T17:41:00+09:00"
     },
     "mcee_notice": {
       "name": "기후에너지환경부 공지",
       "status": "success",
       "coverage": "recent_rss_only",
       "rows": 10,
-      "last_success": "2026-10-28T17:14:53+09:00"
+      "last_success": "2026-10-29T17:41:00+09:00"
     },
     "mcee_rules": {
       "name": "기후에너지환경부 고시·행정규칙",
@@ -57,8 +57,75 @@
     }
   },
   "baseline_only": false,
-  "changes": [],
+  "changes": [
+    {
+      "key": "eims_announce:1793235348482",
+      "source_id": "eims_announce",
+      "source": "서울 환경영향평가 공고·공람",
+      "title": "연세대학교 교육연구시설 신축 환경영향평가(재협의)(초안) 공람 및 주민설명회 개최 공고",
+      "date": "2026-10-29",
+      "url": "https://eims.seoul.go.kr/eims/usr/news/announce/list.do",
+      "content_hash": "30d6bd81b46186f0cd9b09c883beec8fb8d70565ef4184d30a7f62c24b202cbd",
+      "link_note": "공식 게시판 열기",
+      "kind": "new_candidate",
+      "observed_at": "2026-10-29T17:41:00+09:00"
+    },
+    {
+      "key": "mcee_notice:https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1903000",
+      "source_id": "mcee_notice",
+      "source": "기후에너지환경부 공지",
+      "title": "「천변 저류지 활용 이?치수능력 증대방안 연구」입찰 재공고(긴급)",
+      "date": "2026-10-29",
+      "url": "https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1903000",
+      "content_hash": "a26974a39086eb8aa3a7e9003b61e9880cab37d557ec6b52c18c4437fb1f297f",
+      "link_note": "공식 원문 후보",
+      "kind": "new_candidate",
+      "observed_at": "2026-10-29T17:41:00+09:00"
+    },
+    {
+      "key": "mcee_notice:https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902900",
+      "source_id": "mcee_notice",
+      "source": "기후에너지환경부 공지",
+      "title": "난방전기화 사업 보조금 업무처리 지침 일부 개정",
+      "date": "2026-10-29",
+      "url": "https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902900",
+      "content_hash": "fe18812efd084c3e2f9dc1946e2b1e36c72603311959a43dc4ee910ea8c8221a",
+      "link_note": "공식 원문 후보",
+      "kind": "new_candidate",
+      "observed_at": "2026-10-29T17:41:00+09:00"
+    }
+  ],
   "recent_observed": [
+    {
+      "key": "eims_announce:1793235348482",
+      "source_id": "eims_announce",
+      "source": "서울 환경영향평가 공고·공람",
+      "title": "연세대학교 교육연구시설 신축 환경영향평가(재협의)(초안) 공람 및 주민설명회 개최 공고",
+      "date": "2026-10-29",
+      "url": "https://eims.seoul.go.kr/eims/usr/news/announce/list.do",
+      "content_hash": "30d6bd81b46186f0cd9b09c883beec8fb8d70565ef4184d30a7f62c24b202cbd",
+      "link_note": "공식 게시판 열기"
+    },
+    {
+      "key": "mcee_notice:https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902900",
+      "source_id": "mcee_notice",
+      "source": "기후에너지환경부 공지",
+      "title": "난방전기화 사업 보조금 업무처리 지침 일부 개정",
+      "date": "2026-10-29",
+      "url": "https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902900",
+      "content_hash": "fe18812efd084c3e2f9dc1946e2b1e36c72603311959a43dc4ee910ea8c8221a",
+      "link_note": "공식 원문 후보"
+    },
+    {
+      "key": "mcee_notice:https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1903000",
+      "source_id": "mcee_notice",
+      "source": "기후에너지환경부 공지",
+      "title": "「천변 저류지 활용 이?치수능력 증대방안 연구」입찰 재공고(긴급)",
+      "date": "2026-10-29",
+      "url": "https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1903000",
+      "content_hash": "a26974a39086eb8aa3a7e9003b61e9880cab37d557ec6b52c18c4437fb1f297f",
+      "link_note": "공식 원문 후보"
+    },
     {
       "key": "eims_announce:1793153640889",
       "source_id": "eims_announce",
@@ -130,16 +197,6 @@
       "link_note": "공식 원문 후보"
     },
     {
-      "key": "mcee_notice:https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902130",
-      "source_id": "mcee_notice",
-      "source": "기후에너지환경부 공지",
-      "title": "행정처분 사전통지(의견제출통지) 공시송달 공고",
-      "date": "2026-10-26",
-      "url": "https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902130",
-      "content_hash": "78071e967a8a3a9cffe647c9b3f7555514411432d32a30d3efb6edaeaa7be8bf",
-      "link_note": "공식 원문 후보"
-    },
-    {
       "key": "eims_announce:1792978305069",
       "source_id": "eims_announce",
       "source": "서울 환경영향평가 공고·공람",
@@ -148,16 +205,6 @@
       "url": "https://eims.seoul.go.kr/eims/usr/news/announce/list.do",
       "content_hash": "bfd404a7a6b507dcfc459eb8e80aebaea946ca8edfbdfbef710390f1f08dfb73",
       "link_note": "공식 게시판 열기"
-    },
-    {
-      "key": "mcee_notice:https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902090",
-      "source_id": "mcee_notice",
-      "source": "기후에너지환경부 공지",
-      "title": "권역형 환경보건센터 지정 공모",
-      "date": "2026-10-26",
-      "url": "https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902090",
-      "content_hash": "a9f0b2c68d45573bee06d59f39b68a6594efca04ec219b1daa4bf20416ad6ea6",
-      "link_note": "공식 원문 후보"
     },
     {
       "key": "mcee_notice:https://www.mcee.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=&searchValue=&menuId=10524&orgCd=&boardMasterId=39&boardId=1902230",
@@ -205,7 +252,7 @@
       "source": "G-SEED 공지",
       "title": "「2026 대한민국 녹색건축대전」 수상작 발표",
       "date": "2026-10-21",
-      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=90&bbsCnt=7&bbsId=2668&pageNum=1",
+      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=90&bbsCnt=19&bbsId=2668&pageNum=1",
       "content_hash": "dc6003d055a9bbd7724c025bdcecaddbf60810b27c2bc0f00a90d89205c70f8c",
       "link_note": "공식 원문 후보"
     },
@@ -225,7 +272,7 @@
       "source": "G-SEED 공지",
       "title": "[10월 23일]건축물전과정평가(LCA) 시스템 사용자 교육 공지",
       "date": "2026-10-12",
-      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=89&bbsCnt=18&bbsId=2662&pageNum=1",
+      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=89&bbsCnt=15&bbsId=2662&pageNum=1",
       "content_hash": "f3b55c41e7e5c48223cc2a71b09cca955e092529f8f99f7373a87a600efe9826",
       "link_note": "공식 원문 후보"
     },
@@ -245,7 +292,7 @@
       "source": "G-SEED 공지",
       "title": "2026년 녹색건축인증전문가(G-SEED ID) (신규)교육 안내",
       "date": "2026-10-01",
-      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=87&bbsCnt=20&bbsId=2659&pageNum=1",
+      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=87&bbsCnt=6&bbsId=2659&pageNum=1",
       "content_hash": "c7f58c7c0bc2571dd03159bcbe562b9f7a6daedde63391b5f405659cd33ca541",
       "link_note": "공식 원문 후보"
     },
@@ -255,7 +302,7 @@
       "source": "G-SEED 공지",
       "title": "2026년 3, 4차 녹색건축인증(G-SEED) 기본교육 안내",
       "date": "2026-10-01",
-      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=88&bbsCnt=27&bbsId=2660&pageNum=1",
+      "url": "https://www.gseed.or.kr/boardDetailPage.do?rnum=88&bbsCnt=35&bbsId=2660&pageNum=1",
       "content_hash": "73f80871faddc08e6dab3fc7e6158725028f0836773bedf9b00da771dbded922",
       "link_note": "공식 원문 후보"
     },
@@ -287,16 +334,6 @@
       "date": "2026-09-30",
       "url": "https://eims.seoul.go.kr/eims/usr/news/announce/list.do",
       "content_hash": "e82cae8ad9d25ea4df9dc0685a25f0cbe1952b4167616d3191843977fda8de82",
-      "link_note": "공식 게시판 열기"
-    },
-    {
-      "key": "eims_announce:1790557580570",
-      "source_id": "eims_announce",
-      "source": "서울 환경영향평가 공고·공람",
-      "title": "서빙고 신동아아파트 재건축정비사업 환경영향평가서(초안) 공람 및 주민설명회 개최 공고",
-      "date": "2026-09-28",
-      "url": "https://eims.seoul.go.kr/eims/usr/news/announce/list.do",
-      "content_hash": "abb3a6823f81307e9a5b166fba734cbe3a72616ebd6e0776c774145a17a447a4",
       "link_note": "공식 게시판 열기"
     }
   ],
