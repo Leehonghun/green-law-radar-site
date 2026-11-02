@@ -2,12 +2,6 @@ name: Daily Green Law Radar - official sources to website
 
 on:
   workflow_dispatch:
-  schedule:
-    # Every day 17:30 Asia/Seoul = 08:30 UTC (Korea is UTC+9).
-    - cron: '0 8 * * *'
-  push:
-    paths:
-      - '.github/workflows/daily-law-radar.yml'
 
 permissions:
   contents: write
